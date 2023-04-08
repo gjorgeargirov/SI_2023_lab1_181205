@@ -1,0 +1,172 @@
+4. На вашиот компјутер, направете директориум (локален репозиториум) којшто ќе биде со исто име како и вашиот оддалечен репозиториум. Влезете во директориумот и иницијализирајте го Git во директориумот.
+	mkdir SI_2023_lab1_181205 -> Kreiranje na lokalen repozitorium
+	cd SI_2023_lab1_181205 -> Vlez vo direktoriumot
+	git init -> inicijalizacija na git vo direktoriumot
+
+5.Поврзете го локалниот репозиториум со оддалечениот репозиториум
+	git config --global user.email "gjorge.argirov@outlook.com"
+	git config --global user.name "gjorgeargirov"
+
+6.Додадете README.md датотека во која ќе се потпишете (име, презиме, број на индекс). Направете commit со порака Initial commit.
+	notepad README.txt -> kreiranje na datoteka
+	git add . -> dodavenje na datotekata
+	git commit -m "Initial commit" -> commit so poraka
+
+7.Додадете фајл SILab1.java и ископирајте ја содржината на класата од тука. Направете commit со порака Add java class.
+	git add . -> dodavenje na datotekata
+	git commit -m "Add java class" -> commit so poraka
+
+8.Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+	git branch -m master -> prefrlanje na master 
+	git remote add origin https://github.com/gjorgeargirov/SI_2023_lab1_181205.git -> sinhronizacija so odaleceniot repozitorium
+	git push -u origin master -> dodavenje na site granki
+
+9.Отворете три гранки (сите да се разгрануваат од master гранката): bug1, bug2 и bug3.
+	git branch bug1
+	git branch bug2
+	git branch bug3
+
+10.Префрлете се на гранката bug1.
+	git checkout bug1
+
+11.Поправете ја грешката во for циклусот кој се користи за читање на N-те броеви од стандарден влез. Направете commit со пораката Fix wrong loop for reading.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git checkout bug1
+	Switched to branch 'bug1'
+	git add .
+	C:\Users\Gjorge\SI_2023_lab1_181205>git commit -m "Fix wrong loop for reading"
+	C:\Users\Gjorge\SI_2023_lab1_181205>git push -u origin bug1
+	[bug1 ee04534] Fix wrong loop for reading
+ 	1 file changed, 1 insertion(+), 1 deletion(-)
+	git push -u origin bug1
+	C:\Users\Gjorge\SI_2023_lab1_181205>git push -u origin bug1
+	Enumerating objects: 5, done.
+	Counting objects: 100% (5/5), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 324 bytes | 324.00 KiB/s, done.
+	Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	remote:
+	remote: Create a pull request for 'bug1' on GitHub by visiting:
+	remote:      https://github.com/gjorgeargirov/SI_2023_lab1_181205/pull/new/bug1
+	remote:
+	To https://github.com/gjorgeargirov/SI_2023_lab1_181205.git
+	 * [new branch]      bug1 -> bug1
+	branch 'bug1' set up to track 'origin/bug1'.
+
+12. Префрлете се на гранката bug2.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git checkout bug2
+	Switched to branch 'bug2'
+
+13. Поправете ја грешката во методот filterOddNumbers. Направете commit со
+пораката Fix wrong condition in filterOddNumbers.
+	git add .
+	C:\Users\Gjorge\SI_2023_lab1_181205>git commit -m "Fix wrong loop for reading"
+	C:\Users\Gjorge\SI_2023_lab1_181205>git push -u origin bug2
+	[bug2 d1f178e] Fix wrong loop for reading
+ 	1 file changed, 1 insertion(+), 1 deletion(-)
+	C:\Users\Gjorge\SI_2023_lab1_181205>git push -u origin bug2
+	Enumerating objects: 5, done.
+	Counting objects: 100% (5/5), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 333 bytes | 333.00 KiB/s, done.
+	Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	remote:
+	remote: Create a pull request for 'bug2' on GitHub by visiting:
+	remote:      https://github.com/gjorgeargirov/SI_2023_lab1_181205/pull/new/bug2
+	remote:
+	To https://github.com/gjorgeargirov/SI_2023_lab1_181205.git
+	 * [new branch]      bug2 -> bug2
+	branch 'bug2' set up to track 'origin/bug2'.
+
+14. Префрлете се на гранката bug3.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git checkout bug3
+	Switched to branch 'bug3'
+
+15. Поправете ја грешката во методот sumEvenNumbers. Направете commit со
+порака Fix method sumEvenNumbers.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git add .
+	C:\Users\Gjorge\SI_2023_lab1_181205>git commit -m  "Fix method sumEvenNumbers"
+	
+16. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git fetch
+
+17. Префрлете се на гранката master.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git checkout master
+	Switched to branch 'master'
+	Your branch is up to date with 'origin/master'.
+
+18. Спојте ја гранката bug1 кон гранката master.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git merge bug1
+	Updating 5ed327d..ee04534
+	Fast-forward
+	 SILab1.java | 2 +-
+	 1 file changed, 1 insertion(+), 1 deletion(-)
+
+19. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git fetch
+
+20. Спојте ја гранката bug2 кон гранката master.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git merge bug2
+	Auto-merging SILab1.java
+	Merge made by the 'ort' strategy.
+ 	SILab1.java | 2 +-
+	 1 file changed, 1 insertion(+), 1 deletion(-)
+
+21. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git fetch
+
+22. Префрлете се на гранката bug3.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git checkout bug3
+	Switched to branch 'bug3'
+	Your branch is up to date with 'origin/bug3'.
+
+23. Направете rebase спрема гранката master.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git rebase origin/master
+	Successfully rebased and updated refs/heads/bug3.
+	
+	C:\Users\Gjorge\SI_2023_lab1_181205>git add .
+	C:\Users\Gjorge\SI_2023_lab1_181205>git push origin +bug3
+	Enumerating objects: 5, done.
+	Counting objects: 100% (5/5), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 339 bytes | 339.00 KiB/s, done.
+	Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	To https://github.com/gjorgeargirov/SI_2023_lab1_181205.git
+	 + d1b5852...07bc2c0 bug3 -> bug3 (forced update)
+
+24. Префрлете се на гранката master.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git checkout master
+	Switched to branch 'master'
+	Your branch is up to date with 'origin/master'.
+
+25. Спојте ја гранката bug3 кон гранката master.
+	C:\Users\Gjorge\SI_2023_lab1_181205>git merge bug3
+	Updating 4022432..07bc2c0
+	Fast-forward
+	 SILab1.java | 2 +-
+	 1 file changed, 1 insertion(+), 1 deletion(-)
+	C:\Users\Gjorge\SI_2023_lab1_181205>git push
+	Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/gjorgeargirov/SI_2023_lab1_181205.git
+   	4022432..07bc2c0  master -> master
+
+26. Синхронизирајте ги сите гранки со оддалечениот репозиториум. (Доколку е потребно, употребете --force за гранката bug3).
+	C:\Users\Gjorge\SI_2023_lab1_181205>git fetch
+	
+27. Додадете датотеката logs.txt во која ќе ги ископирате досегашните git логови. Додадете ја и датотеката INDEX.txt (каде што наместо INDEX ќе стои вашиот број на индекс) во која водевте документација додека ја решававте оваа 
+лабораториска вежба. Направете последен commit со порака Final commit.
+	
+
+28. Синхронизирајте ги сите гранки со оддалечениот репозиториум.
+
+
+
+
+
+
+
